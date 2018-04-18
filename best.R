@@ -4,13 +4,13 @@ best <- function(state, outcome) {
    # head(outcome_data)
     ## Check that state and outcome are valid
     
-    states <- outcome_data[ , 7]
+    states <- unique(outcome_data[ , 7])
     outcomes <- c("heart attack", "heart failure", "pneumonia")
     if ((state %in% states) == FALSE) {
-        stop(print("Invalid State"))
+        stop(print("invalid state"))
     }
     else if ((outcome %in% outcomes) == FALSE) {
-        stop(print("Invalid Outcome"))
+        stop(print("invalid outcome"))
     }
     
 
@@ -42,7 +42,7 @@ best <- function(state, outcome) {
     
     #if there are multiple hospitals with the minimum outcome value, then
     #return the first hospital name from the alphabetically sorted hospital
-    #names list
+    #names listde
     if (length(desired_hospitals) > 1) {
         hospitals_sorted <- sort(desired_hospitals)
         hospitals_sorted[1]
